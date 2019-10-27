@@ -6,8 +6,6 @@ T = int(input())
 dy = [-1,1,0,0]
 dx = [0,0,-1,1]
 for test_case in range(1,T+1):
-    # if test_case ==3:
-    #     print('dd')
     N,W,H = list(map(int, input().split()))
     m = [list(map(int,input().split())) for _ in range(H)]
     def shoot():
@@ -68,8 +66,6 @@ for test_case in range(1,T+1):
     for i in itertools.product(list(range(W)),repeat=N):
         #print(i)
         shoot_list = list(i)
-        # if shoot_list == [2,2,3]:
-        #     print('dd')
         shoot()
         # 남은 벽돌 수 계산
         res = get_block_number()
