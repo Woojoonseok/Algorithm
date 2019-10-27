@@ -7,14 +7,11 @@ T = int(input())
 dy = [1,-1,0,0]
 dx=  [0,0,-1,1]
 for test_case in range(1,T+1):
-    if test_case==2:
-        break
     N, W, H = list(map(int, input().split()))
     m = [list(map(int,input().split())) for _ in range(H)]
     print(m)
     # W 개 중에N 개 선택
     for i in itertools.combinations(list(range(W)),N):
-        print(i)
         start_list = list(i)
         # BFS
         # 맞는 곳 찾아서 BFS 시작
