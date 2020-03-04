@@ -3,7 +3,7 @@
 
 ### 백트래킹(Backtracking)
 
-' 부분집합의합 https://www.acmicpc.net/problem/1182 '
+'부분집합의합' https://www.acmicpc.net/problem/1182 
 
 
 >암호 만들기 https://www.acmicpc.net/problem/1759 
