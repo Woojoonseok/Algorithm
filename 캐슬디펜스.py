@@ -4,10 +4,10 @@ Created on Wed Mar  4 10:45:19 2020
 
 @author: Seokwoojoon
 """
-from collections import Counter
+
 import sys
 import copy
-sys.stdin = open('castle_defense.txt','r')
+#sys.stdin = open('castle_defense.txt','r')
 N,M,D = list(map(int, sys.stdin.readline().split()))
 m = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
 m.append([0]*M)
