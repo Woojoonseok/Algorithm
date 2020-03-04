@@ -23,7 +23,7 @@ cnt =0
 def attack(pos):
     # input : 현재 궁수 위치 
     # output: None
-    # 적군 위치를 찾아서 임시 배열에 표시 
+    # 적군 위치를 찾아서 배열에 표시 
     global shoot_list,backup, cnt
     y = N; x = pos
     temp = []
@@ -37,7 +37,6 @@ def attack(pos):
     # d 최소 찾기 --> 중복 일때 왼쪽 고름 
     if len(temp) >1:
         find_min_d = float('inf')
-        #Counter(temp, key=lambda x:x[2])
         temp.sort(key = lambda x:x[2])
         d_min = temp[0][2]
         while True:
@@ -60,8 +59,6 @@ def attack(pos):
     else:
         shoot_list.extend(temp)
         
-        
-    
 def map_move(m):
     m.pop(-2)
     m.insert(0,[0]*M)
@@ -70,10 +67,6 @@ def dfs(n):
     global archer_list, archer, shoot_list, ans, backup, cnt
     cnt =0 
     if len(archer)==3:
-        #print(archer)
-        #배치
-        # if archer == [1,2,3]:
-        #     print('d')
         # 맵초기화
         backup = copy.deepcopy(m)
         game_end= False
@@ -86,8 +79,6 @@ def dfs(n):
                 backup[N][a] = 9 
                 attack(a)
             for i in shoot_list:
-                #print(i)
-                #i = i[0]
                 cnt += 1
                 # 같은 적을 쐈을 때
                 if backup[i[0]][i[1]] ==0:
@@ -96,12 +87,10 @@ def dfs(n):
                     backup[i[0]][i[1]] =0 
             #맵 이동 
             map_move(backup)
-                #game_end = True
             # 적을 다 잡았을 때 
             if sum(sum(backup[:-1],[]))==0:
                 game_end = True
             ans = max(cnt, ans)
-        #print(ans)
         return
     
     for i in range(n,M):
