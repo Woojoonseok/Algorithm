@@ -4,6 +4,7 @@ Created on Wed Apr 22 16:15:05 2020
 
 @author: Seokwoojoon
 """
+# Maaaaaaaze  :  https://www.acmicpc.net/problem/16985
 import copy
 import os
 import sys
